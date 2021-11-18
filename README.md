@@ -1,4 +1,5 @@
 # Memory-Game
+2D Graphics Memory Game in Java.
 
 ## About
 This is a memory game where the player is shown several digits and must recall their order after three seconds.
