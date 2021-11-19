@@ -8,8 +8,14 @@ The number of digits increases up until a total of ten after succesful attempts.
 
 ## In The Game
 ### Welcome Screen
+
+![Image](imgs/welcome_screen.png)
+
 ### Gameplay
 * Game Start
+
+![Image](imgs/game_screen_start.png)
+
 * Buttons
   1. Play
   2. Restart
