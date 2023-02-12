@@ -4,6 +4,8 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class GameWindow extends JPanel implements MouseListener, MouseMotionListener {
 
@@ -157,12 +159,10 @@ public class GameWindow extends JPanel implements MouseListener, MouseMotionList
     public void mouseMoved(MouseEvent e) {
     }
 
-    public void customDelay(int delay){
-//        long a = System.nanoTime();
-        for(int i = 0; i < delay*Math.pow(10, 7.8573); i++){}
-        // as determined from system time prints, each loop is completed
-        // in 1 second
-//        System.out.println(System.nanoTime()-a);
+    public void customDelay(long delay){
+        try{
+            Thread.sleep(delay);
+        }catch(Exception ignored){}
     }
 
     public boolean isAllSelected(){
@@ -271,11 +271,13 @@ public class GameWindow extends JPanel implements MouseListener, MouseMotionList
             g.setFont(myFont);
             g.setColor(colors[count-1]);
             g.drawString("" + (count), Main.width / 2 - Main.sidePad -4, (buttonWidth + Main.sidePad) / 2 - 14);
-            customDelay(1);
+            System.out.println("COUNTDOWN");
+            customDelay(1000);
         }else{
             g.setColor(colors[2]);
             g.drawString("3", Main.width / 2 - Main.sidePad -4, (buttonWidth + Main.sidePad) / 2 - 14);
-            customDelay(1);
+            System.out.println("COUNTDOWN");
+            customDelay(1000);
         }
         if (count>=4) {
             unselectAll();
